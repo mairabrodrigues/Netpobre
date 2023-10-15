@@ -1,0 +1,66 @@
+﻿@page
+@model Netpobre.Pages.SeriesCRUD.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Series[0].Show)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Series[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Series[0].Seasons)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Series[0].Episodes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Series[0].Actors)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Series[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Series) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Show)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Seasons)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Episodes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actors)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.IdShow">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.IdShow">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.IdShow">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

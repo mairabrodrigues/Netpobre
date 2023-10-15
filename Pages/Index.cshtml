@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Shows4All</h1>
+    <a><p>Your best fake laugh!</a></p>
+</div>
+<div class="row">
+    @if (Model.Serie.Count > 0)
+    {
+        @foreach (var serie in Model.Serie)
+        {
+            <div class="col-sm-2">
+                <div class="card text-center bg-light mb-4">
+                    <div class="card-header">€ @serie.Price
+                        <div class="card-body" style="height:124px; ">
+                            <h5 class="card-title">@serie.Show</h5>
+
+                            <p class="card-text">@serie.Description</p>
+                            <div class="card-footer"></div>
+                            <div><a href="btn btn-primary">Add to cart</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        }
+
+    }
+    else
+    {
+
+        <h1>So sorry! </h1>
+        <h1>We don´t have this show... yet!</h1>
+    }
+
+</div>

@@ -1,0 +1,60 @@
+﻿@page
+@model Netpobre.Pages.SeriesCRUD.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Series</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Series.IdShow" />
+            <div class="form-group">
+                <label asp-for="Series.Show" class="control-label"></label>
+                <input asp-for="Series.Show" class="form-control" />
+                <span asp-validation-for="Series.Show" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Series.Description" class="control-label"></label>
+                <input asp-for="Series.Description" class="form-control" />
+                <span asp-validation-for="Series.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Series.Seasons" class="control-label"></label>
+                <input asp-for="Series.Seasons" class="form-control" />
+                <span asp-validation-for="Series.Seasons" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Series.Episodes" class="control-label"></label>
+                <input asp-for="Series.Episodes" class="form-control" />
+                <span asp-validation-for="Series.Episodes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Series.Actors" class="control-label"></label>
+                <input asp-for="Series.Actors" class="form-control" />
+                <span asp-validation-for="Series.Actors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Series.Price" class="control-label"></label>
+                <input asp-for="Series.Price" class="form-control" />
+                <span asp-validation-for="Series.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

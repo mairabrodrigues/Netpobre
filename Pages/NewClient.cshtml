@@ -1,0 +1,53 @@
+﻿@page
+@model Netpobre.Pages.NewClientModel
+
+
+@{
+    ViewData["Title"] = "New Client";
+}
+
+<h1>New Client</h1>
+
+<h4>Register</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="Clients.UserClient" class="control-label">User Client</label>
+                <input asp-for="Clients.UserClient" class="form-control" />
+                <span asp-validation-for="Clients.UserClient" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Clients.Email" class="control-label">Email</label>
+                <input asp-for="Clients.Email" class="form-control" />
+                <span asp-validation-for="Clients.Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="UserPassword.Password" class="control-label">Password</label>
+                <input asp-for="UserPassword.Password" class="form-control" />
+                <span asp-validation-for="UserPassword.Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="/Index">Home</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
